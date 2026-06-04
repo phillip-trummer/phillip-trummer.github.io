@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/site';
+
+const photos = [
+  {
+    src: '/photos/zurich-lines.svg',
+    alt: 'A line drawing of buildings, water, and tram wires.',
+    title: 'Zurich lines',
+    caption: 'Evening walk, water, wires, facades.',
+  },
+  {
+    src: '/photos/desk-notes.svg',
+    alt: 'A line drawing of a notebook, a keyboard, and a coffee cup on a desk.',
+    title: 'Desk notes',
+    caption: 'A small working surface and the notes that survive it.',
+  },
+  {
+    src: '/photos/train-window.svg',
+    alt: 'A line drawing of a train window looking toward hills.',
+    title: 'Train window',
+    caption: 'In-between time is good thinking time.',
+  },
+];
+---
+
+<BaseLayout title="Photos" description="A small visual log.">
+  <section class="page-header">
+    <p class="identity">visual log</p>
+    <h1>Photos</h1>
+    <p>A quiet place for images from walks, travel, work, and the in-between bits.</p>
+  </section>
+
+  <div class="photo-grid">
+    {photos.map((photo) => (
+      <figure>
+        <img src={withBase(photo.src)} alt={photo.alt} loading="lazy" />
+        <figcaption>
+          <strong>{photo.title}</strong>
+          <span>{photo.caption}</span>
+        </figcaption>
+      </figure>
+    ))}
+  </div>
+</BaseLayout>

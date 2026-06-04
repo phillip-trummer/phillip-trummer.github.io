@@ -1,0 +1,14 @@
+---
+import { siteMeta, withBase } from '../lib/site';
+---
+
+<footer class="site-footer">
+  <nav aria-label="Contact links">
+    <a href={`mailto:${siteMeta.email}`}>email</a>
+    <a href={siteMeta.github}>github</a>
+    <a href={siteMeta.linkedin}>linkedin</a>
+    <a href={siteMeta.scholar}>scholar</a>
+    <a href={withBase('/rss.xml')}>rss</a>
+  </nav>
+  <p>Built with Astro. Static, small, and easy to move.</p>
+</footer>

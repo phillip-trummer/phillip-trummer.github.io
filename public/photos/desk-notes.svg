@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="Line drawing of notebook and keyboard on a desk">
+  <rect width="900" height="620" fill="#f8f8f8"/>
+  <rect x="136" y="148" width="286" height="344" rx="8" fill="none" stroke="#111" stroke-width="4"/>
+  <path d="M178 220h190M178 268h150M178 316h188M178 364h120" stroke="#0f7778" stroke-width="7" stroke-linecap="round"/>
+  <rect x="476" y="260" width="270" height="160" rx="10" fill="none" stroke="#111" stroke-width="4"/>
+  <path d="M512 304h198M512 346h198M512 388h198" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+  <path d="M662 164c36 0 62 28 62 62s-26 62-62 62h-24V164h24Z" fill="none" stroke="#d04f3f" stroke-width="5"/>
+  <path d="M637 182h-68v84h68" fill="none" stroke="#e6b84b" stroke-width="5"/>
+</svg>

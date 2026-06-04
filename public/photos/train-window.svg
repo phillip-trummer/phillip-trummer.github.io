@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="Line drawing of a train window looking toward hills">
+  <rect width="900" height="620" fill="#f8f8f8"/>
+  <rect x="120" y="92" width="660" height="416" rx="20" fill="none" stroke="#111" stroke-width="5"/>
+  <path d="M168 370c70-84 134-124 192-122 70 3 102 88 172 92 58 4 92-46 190-122" fill="none" stroke="#0f7778" stroke-width="7" stroke-linecap="round"/>
+  <path d="M168 424h556" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+  <path d="M222 470h456" stroke="#d04f3f" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="644" cy="172" r="34" fill="#e6b84b"/>
+  <path d="M450 92v416" stroke="#111" stroke-width="3"/>
+</svg>

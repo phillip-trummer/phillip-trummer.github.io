@@ -1,0 +1,33 @@
+---
+import { formatDate, withBase } from '../lib/site';
+
+interface Post {
+  id: string;
+  data: {
+    title: string;
+    description: string;
+    date: Date;
+    tags: string[];
+  };
+}
+
+interface Props {
+  posts: Post[];
+  limit?: number;
+}
+
+const { posts, limit } = Astro.props;
+const visiblePosts = typeof limit === 'number' ? posts.slice(0, limit) : posts;
+---
+
+<ol class="post-list">
+  {visiblePosts.map((post) => (
+    <li>
+      <a href={withBase(`/blog/${post.id}/`)}>
+        <span>{post.data.title}</span>
+        <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+      </a>
+      <p>{post.data.description}</p>
+    </li>
+  ))}
+</ol>
