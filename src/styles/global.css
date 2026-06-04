@@ -8,8 +8,7 @@
   --link: #0f7778;
   --accent: #d04f3f;
   --gold: #b88618;
-  --shadow: 0 18px 50px rgba(17, 17, 17, 0.08);
-  --max-width: 760px;
+  --max-width: 720px;
 }
 
 :root[data-theme="dark"] {
@@ -22,7 +21,6 @@
   --link: #72c7c7;
   --accent: #ef7b6d;
   --gold: #e6b84b;
-  --shadow: 0 18px 50px rgba(0, 0, 0, 0.36);
 }
 
 * {
@@ -33,7 +31,7 @@ html {
   background: var(--bg);
   color: var(--text);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 0;
 }
 
@@ -86,26 +84,21 @@ a:hover {
 
 .site-header {
   align-items: center;
+  border-bottom: 1px solid var(--rule);
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: space-between;
-  padding-block: 1.35rem;
+  padding-block: 1.65rem;
 }
 
 .brand {
-  align-items: center;
   color: var(--text);
-  display: inline-flex;
-  font-weight: 700;
-  gap: 0.7rem;
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
   min-width: 0;
   text-decoration: none;
-}
-
-.brand img {
-  border-radius: 7px;
-  box-shadow: var(--shadow);
-  flex: 0 0 auto;
 }
 
 .brand span {
@@ -118,13 +111,13 @@ a:hover {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: 1rem;
   justify-content: flex-end;
 }
 
 .nav a {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   text-decoration: none;
 }
 
@@ -136,19 +129,18 @@ a:hover {
 .theme-toggle {
   align-items: center;
   background: transparent;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
+  border: 0;
   color: var(--text);
   cursor: pointer;
   display: inline-flex;
-  height: 2rem;
+  height: 1.5rem;
   justify-content: center;
   padding: 0;
-  width: 2rem;
+  width: 1.5rem;
 }
 
 .theme-toggle:hover {
-  border-color: var(--text);
+  color: var(--accent);
 }
 
 .icon {
@@ -167,23 +159,19 @@ a:hover {
 }
 
 .site-main {
-  padding-block: 4.5rem 3rem;
+  padding-block: 5rem 4rem;
 }
 
 .intro {
-  margin-bottom: 4rem;
-}
-
-.intro-mark {
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 5rem;
+  padding-bottom: 4.5rem;
 }
 
 .identity {
   color: var(--muted);
-  font-size: 0.95rem;
-  margin: 0 0 0.75rem;
+  font-size: 0.92rem;
+  margin: 0 0 1.1rem;
 }
 
 h1,
@@ -194,24 +182,24 @@ p {
 }
 
 h1 {
-  font-size: clamp(2.2rem, 8vw, 5.4rem);
-  line-height: 0.96;
-  margin-bottom: 1.4rem;
+  font-size: clamp(1.35rem, 4vw, 2rem);
+  line-height: 1.32;
+  margin-bottom: 1.55rem;
 }
 
 h2 {
-  font-size: 1.35rem;
-  line-height: 1.2;
-  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 
 p,
 li {
-  line-height: 1.72;
+  line-height: 1.85;
 }
 
 .intro p:last-child,
@@ -220,21 +208,22 @@ li {
 .post > p,
 .post li {
   color: var(--muted);
-  font-size: 1.06rem;
+  font-size: 1rem;
 }
 
 .section-heading {
   align-items: end;
+  border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
   display: flex;
   gap: 1rem;
   justify-content: space-between;
-  margin-bottom: 1rem;
-  padding-bottom: 0.85rem;
+  margin-bottom: 1.2rem;
+  padding-block: 1.25rem;
 }
 
 .focus {
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 }
 
 .focus-list {
@@ -247,9 +236,9 @@ li {
 .focus-list li {
   border-bottom: 1px solid var(--rule);
   display: grid;
-  gap: 1rem;
+  gap: 1.35rem;
   grid-template-columns: 10rem minmax(0, 1fr);
-  padding: 1rem 0;
+  padding: 1.35rem 0;
 }
 
 .focus-list strong {
@@ -269,13 +258,13 @@ li {
 
 .post-list {
   list-style: none;
-  margin: 0 0 4rem;
+  margin: 0 0 5rem;
   padding: 0;
 }
 
 .post-list li {
   border-bottom: 1px solid var(--rule);
-  padding: 1.05rem 0;
+  padding: 1.3rem 0;
 }
 
 .post-list a {
@@ -293,7 +282,7 @@ li {
 
 .post-list time {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   white-space: nowrap;
 }
 
@@ -303,9 +292,9 @@ li {
 }
 
 .now {
-  border-left: 3px solid var(--gold);
-  margin-top: 4rem;
-  padding-left: 1.25rem;
+  border-top: 1px solid var(--rule);
+  margin-top: 5rem;
+  padding-top: 1.35rem;
 }
 
 .now ul {
@@ -321,24 +310,29 @@ li {
 }
 
 .page-header {
-  margin-bottom: 2.2rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
 }
 
 .page h1,
 .page-header h1,
 .post-header h1 {
-  font-size: clamp(2.3rem, 8vw, 4.6rem);
+  font-size: clamp(1.45rem, 5vw, 2.35rem);
+  line-height: 1.25;
 }
 
 .page h2,
 .post h2 {
-  margin-top: 2.4rem;
+  border-top: 1px solid var(--rule);
+  margin-top: 3.2rem;
+  padding-top: 1.35rem;
 }
 
 .post-header {
   border-bottom: 1px solid var(--rule);
-  margin-bottom: 2rem;
-  padding-bottom: 1.6rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2.4rem;
 }
 
 .tags {
@@ -408,7 +402,7 @@ code {
 .site-footer {
   border-top: 1px solid var(--rule);
   color: var(--muted);
-  padding-block: 1.5rem 2.5rem;
+  padding-block: 1.75rem 2.75rem;
 }
 
 .site-footer nav {
@@ -419,7 +413,7 @@ code {
 }
 
 .site-footer p {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   margin: 0;
 }
 
