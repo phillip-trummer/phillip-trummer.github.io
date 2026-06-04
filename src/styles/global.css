@@ -233,6 +233,35 @@ li {
   padding-bottom: 0.85rem;
 }
 
+.focus {
+  margin-bottom: 4rem;
+}
+
+.focus-list {
+  border-top: 1px solid var(--rule);
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.focus-list li {
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 10rem minmax(0, 1fr);
+  padding: 1rem 0;
+}
+
+.focus-list strong {
+  font-size: 0.95rem;
+}
+
+.focus-list p,
+.empty-state {
+  color: var(--muted);
+  margin: 0;
+}
+
 .section-heading p {
   color: var(--muted);
   margin: 0;
@@ -414,6 +443,11 @@ code {
   }
 
   .post-list a {
+    grid-template-columns: 1fr;
+  }
+
+  .focus-list li {
+    gap: 0.35rem;
     grid-template-columns: 1fr;
   }
 

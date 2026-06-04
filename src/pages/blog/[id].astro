@@ -19,7 +19,7 @@ const { Content } = await render(post);
 <BaseLayout title={post.data.title} description={post.data.description}>
   <article class="post">
     <header class="post-header">
-      <p class="identity">note · <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time></p>
+      <p class="identity">note / <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time></p>
       <h1>{post.data.title}</h1>
       <p>{post.data.description}</p>
       {post.data.tags.length > 0 && (

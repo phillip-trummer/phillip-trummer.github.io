@@ -11,7 +11,7 @@ const posts = sortByDateDesc(await getCollection('posts', ({ data }) => !data.dr
   <section class="page-header">
     <p class="identity">archive</p>
     <h1>Blog</h1>
-    <p>Notes, ideas, and work in progress.</p>
+    <p>Notes on AI systems, engineering tradeoffs, and research ideas.</p>
   </section>
-  <PostList posts={posts} />
+  {posts.length > 0 ? <PostList posts={posts} /> : <p class="empty-state">No public posts yet.</p>}
 </BaseLayout>

@@ -1,14 +1,18 @@
 ---
 import { siteMeta, withBase } from '../lib/site';
+
+const contactLinks = [
+  { label: 'email', href: `mailto:${siteMeta.email}` },
+  { label: 'github', href: siteMeta.github },
+  { label: 'linkedin', href: siteMeta.linkedin },
+  { label: 'scholar', href: siteMeta.scholar },
+  { label: 'rss', href: withBase('/rss.xml') },
+].filter((link) => link.href);
 ---
 
 <footer class="site-footer">
   <nav aria-label="Contact links">
-    <a href={`mailto:${siteMeta.email}`}>email</a>
-    <a href={siteMeta.github}>github</a>
-    <a href={siteMeta.linkedin}>linkedin</a>
-    <a href={siteMeta.scholar}>scholar</a>
-    <a href={withBase('/rss.xml')}>rss</a>
+    {contactLinks.map((link) => <a href={link.href}>{link.label}</a>)}
   </nav>
   <p>Built with Astro. Static, small, and easy to move.</p>
 </footer>

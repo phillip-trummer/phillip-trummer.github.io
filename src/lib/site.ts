@@ -1,11 +1,11 @@
 export const siteMeta = {
-  name: 'Phil Trummer',
-  title: 'Phil Trummer - personal site',
-  description: 'Notes, projects, photos, and contact links.',
-  email: 'hello@example.com',
+  name: 'Phillip Trummer',
+  title: 'Phillip Trummer - personal site',
+  description: 'AI systems, research notes, and selected projects from Zurich.',
+  email: 'pstrummer@outlook.com',
   github: 'https://github.com/phillip-trummer',
-  linkedin: 'https://www.linkedin.com/in/yourname',
-  scholar: 'https://scholar.google.com/',
+  linkedin: '',
+  scholar: '',
 };
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');

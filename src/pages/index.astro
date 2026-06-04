@@ -5,35 +5,68 @@ import PostList from '../components/PostList.astro';
 import { siteMeta, sortByDateDesc, withBase } from '../lib/site';
 
 const posts = sortByDateDesc(await getCollection('posts', ({ data }) => !data.draft));
+const focusAreas = [
+  {
+    title: 'Research',
+    detail:
+      'Self-improving LLM agents for CUDA kernel development, with an eye on profiling, feedback loops, and GPU performance.',
+  },
+  {
+    title: 'Product engineering',
+    detail:
+      'LLM-based product systems, real-time interaction, automated feedback, and the production details around them.',
+  },
+  {
+    title: 'Systems',
+    detail:
+      'Databases, cloud architecture, accelerated computing, and interfaces that make technical work easier to reason about.',
+  },
+];
 ---
 
 <BaseLayout title={siteMeta.title} description={siteMeta.description}>
   <section class="intro">
     <img class="intro-mark" src={withBase('/mark.svg')} alt="" width="88" height="88" />
-    <p class="identity">{siteMeta.name} · researcher / engineer · Zurich</p>
-    <h1>Writing, building, and learning in public.</h1>
+    <p class="identity">{siteMeta.name} / AI systems & software / Zurich</p>
+    <h1>Building AI systems that move from research into useful products.</h1>
     <p>
-      I work around software systems, applied machine learning, and the small tools that make
-      technical work feel more humane. This is my notebook for projects, essays, photos, and
-      occasional field notes.
+      I work at the intersection of LLM agents, full-stack product engineering, and accelerated
+      computing. I am currently an ETH Zurich MSc student developing self-improving agents for
+      CUDA kernel optimization and building applied AI products.
     </p>
   </section>
 
-  <section class="section-heading">
-    <div>
-      <h2>Recent posts</h2>
-      <p>Short notes and longer writeups.</p>
-    </div>
-    <a href={withBase('/blog/')}>all posts</a>
+  <section class="focus">
+    <h2>Focus</h2>
+    <ol class="focus-list">
+      {focusAreas.map((area) => (
+        <li>
+          <strong>{area.title}</strong>
+          <p>{area.detail}</p>
+        </li>
+      ))}
+    </ol>
   </section>
-  <PostList posts={posts} limit={6} />
+
+  {posts.length > 0 && (
+    <>
+      <section class="section-heading">
+        <div>
+          <h2>Recent posts</h2>
+          <p>Short notes and longer writeups.</p>
+        </div>
+        <a href={withBase('/blog/')}>all posts</a>
+      </section>
+      <PostList posts={posts} limit={6} />
+    </>
+  )}
 
   <section class="now">
     <h2>Now</h2>
     <ul>
-      <li>Exploring practical ways to make ML systems easier to inspect.</li>
-      <li>Collecting examples of personal sites that feel quiet, useful, and alive.</li>
-      <li>Keeping a small photo log from walks, trains, desks, and conferences.</li>
+      <li>Working on an ETH MSc in Electrical Engineering and Information Technology.</li>
+      <li>Researching self-improving LLM agents for CUDA kernel development.</li>
+      <li>Building LLM-based product systems with real-time interaction and feedback loops.</li>
     </ul>
   </section>
 </BaseLayout>

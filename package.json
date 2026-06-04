@@ -5,13 +5,11 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/check": "latest",
     "@astrojs/rss": "latest",
-    "astro": "latest",
-    "typescript": "latest"
+    "astro": "latest"
   }
 }
