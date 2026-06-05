@@ -4,7 +4,7 @@ export const siteMeta = {
   description: 'AI systems, research notes, and selected projects from Zurich.',
   email: 'pstrummer@outlook.com',
   github: 'https://github.com/phillip-trummer',
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/phillip-trummer/',
   scholar: '',
 };
 

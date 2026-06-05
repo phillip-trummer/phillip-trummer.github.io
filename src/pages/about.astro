@@ -1,6 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteMeta } from '../lib/site';
+
+const focusAreas = [
+  {
+    title: 'Research',
+    detail:
+      'Self-improving LLM agents for CUDA kernel development, with an eye on profiling, feedback loops, and GPU performance.',
+  },
+  {
+    title: 'Product engineering',
+    detail:
+      'LLM-based product systems, real-time interaction, automated feedback, and the production details around them.',
+  },
+  {
+    title: 'Systems',
+    detail:
+      'Databases, cloud architecture, accelerated computing, and interfaces that make technical work easier to reason about.',
+  },
+];
 ---
 
 <BaseLayout title="About" description={`About ${siteMeta.name}.`}>
@@ -12,6 +30,16 @@ import { siteMeta } from '../lib/site';
       research and product: LLM agents, production AI systems, accelerated computing, and practical
       tools for reasoning about complex workflows.
     </p>
+
+    <h2>Focus</h2>
+    <ol class="focus-list">
+      {focusAreas.map((area) => (
+        <li>
+          <strong>{area.title}</strong>
+          <p>{area.detail}</p>
+        </li>
+      ))}
+    </ol>
 
     <h2>Work</h2>
     <p>
@@ -26,6 +54,13 @@ import { siteMeta } from '../lib/site';
       also touches agent/database co-design, GPU-backed systems, and evaluation loops that turn
       profiling or runtime feedback into better decisions.
     </p>
+
+    <h2>Now</h2>
+    <ul>
+      <li>Working on an ETH MSc in Electrical Engineering and Information Technology.</li>
+      <li>Researching self-improving LLM agents for CUDA kernel development.</li>
+      <li>Building LLM-based product systems with real-time interaction and feedback loops.</li>
+    </ul>
 
     <h2>Writing</h2>
     <p>

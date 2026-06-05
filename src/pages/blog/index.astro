@@ -7,10 +7,10 @@ import { sortByDateDesc } from '../../lib/site';
 const posts = sortByDateDesc(await getCollection('posts', ({ data }) => !data.draft));
 ---
 
-<BaseLayout title="Blog" description="Notes and essays.">
+<BaseLayout title="Blogs" description="Notes and essays.">
   <section class="page-header">
     <p class="identity">archive</p>
-    <h1>Blog</h1>
+    <h1>Blogs</h1>
     <p>Notes on AI systems, engineering tradeoffs, and research ideas.</p>
   </section>
   {posts.length > 0 ? <PostList posts={posts} /> : <p class="empty-state">No public posts yet.</p>}

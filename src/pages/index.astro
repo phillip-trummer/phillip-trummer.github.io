@@ -5,23 +5,6 @@ import PostList from '../components/PostList.astro';
 import { siteMeta, sortByDateDesc, withBase } from '../lib/site';
 
 const posts = sortByDateDesc(await getCollection('posts', ({ data }) => !data.draft));
-const focusAreas = [
-  {
-    title: 'Research',
-    detail:
-      'Self-improving LLM agents for CUDA kernel development, with an eye on profiling, feedback loops, and GPU performance.',
-  },
-  {
-    title: 'Product engineering',
-    detail:
-      'LLM-based product systems, real-time interaction, automated feedback, and the production details around them.',
-  },
-  {
-    title: 'Systems',
-    detail:
-      'Databases, cloud architecture, accelerated computing, and interfaces that make technical work easier to reason about.',
-  },
-];
 ---
 
 <BaseLayout title={siteMeta.title} description={siteMeta.description}>
@@ -33,18 +16,6 @@ const focusAreas = [
       computing. I am currently an ETH Zurich MSc student developing self-improving agents for
       CUDA kernel optimization and building applied AI products.
     </p>
-  </section>
-
-  <section class="focus">
-    <h2>Focus</h2>
-    <ol class="focus-list">
-      {focusAreas.map((area) => (
-        <li>
-          <strong>{area.title}</strong>
-          <p>{area.detail}</p>
-        </li>
-      ))}
-    </ol>
   </section>
 
   {posts.length > 0 && (
@@ -59,13 +30,4 @@ const focusAreas = [
       <PostList posts={posts} limit={6} />
     </>
   )}
-
-  <section class="now">
-    <h2>Now</h2>
-    <ul>
-      <li>Working on an ETH MSc in Electrical Engineering and Information Technology.</li>
-      <li>Researching self-improving LLM agents for CUDA kernel development.</li>
-      <li>Building LLM-based product systems with real-time interaction and feedback loops.</li>
-    </ul>
-  </section>
 </BaseLayout>

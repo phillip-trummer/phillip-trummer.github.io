@@ -1,12 +1,11 @@
 ---
-import { siteMeta, withBase } from '../lib/site';
+import { siteMeta } from '../lib/site';
 
 const contactLinks = [
   { label: 'email', href: `mailto:${siteMeta.email}` },
   { label: 'github', href: siteMeta.github },
   { label: 'linkedin', href: siteMeta.linkedin },
   { label: 'scholar', href: siteMeta.scholar },
-  { label: 'rss', href: withBase('/rss.xml') },
 ].filter((link) => link.href);
 ---
 
@@ -14,5 +13,4 @@ const contactLinks = [
   <nav aria-label="Contact links">
     {contactLinks.map((link) => <a href={link.href}>{link.label}</a>)}
   </nav>
-  <p>Built with Astro. Static, small, and easy to move.</p>
 </footer>
