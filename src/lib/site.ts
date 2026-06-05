@@ -1,11 +1,16 @@
 export const siteMeta = {
   name: 'Phillip Trummer',
+  tagline: 'AI systems & software / Zurich',
   title: 'Phillip Trummer - personal site',
   description: 'AI systems, research notes, and selected projects from Zurich.',
   email: 'pstrummer@outlook.com',
   github: 'https://github.com/phillip-trummer',
   linkedin: 'https://www.linkedin.com/in/phillip-trummer/',
   scholar: '',
+  // Shared identity line shown in every page header (.identity).
+  get identity() {
+    return `${this.name} / ${this.tagline}`;
+  },
 };
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');

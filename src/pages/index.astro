@@ -8,26 +8,27 @@ const posts = sortByDateDesc(await getCollection('posts', ({ data }) => !data.dr
 ---
 
 <BaseLayout title={siteMeta.title} description={siteMeta.description}>
-  <section class="intro">
-    <p class="identity">{siteMeta.name} / AI systems & software / Zurich</p>
+  <div class="page">
+  <header class="page-head">
+    <p class="identity">{siteMeta.identity}</p>
     <h1>Building AI systems that move from research into useful products.</h1>
-    <p>
+    <p class="lead">
       I work at the intersection of LLM agents, full-stack product engineering, and accelerated
       computing. I am currently an ETH Zurich MSc student developing self-improving agents for
       CUDA kernel optimization and building applied AI products.
     </p>
-  </section>
+  </header>
 
   {posts.length > 0 && (
     <>
       <section class="section-heading">
         <div>
-          <h2>Recent posts</h2>
-          <p>Short notes and longer writeups.</p>
+          <p>Recent posts</p>
         </div>
-        <a href={withBase('/blog/')}>all posts</a>
+        <a class="muted-link" href={withBase('/blog/')}>all →</a>
       </section>
       <PostList posts={posts} limit={6} />
     </>
   )}
+  </div>
 </BaseLayout>

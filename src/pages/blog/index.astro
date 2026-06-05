@@ -2,16 +2,18 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostList from '../../components/PostList.astro';
-import { sortByDateDesc } from '../../lib/site';
+import { siteMeta, sortByDateDesc } from '../../lib/site';
 
 const posts = sortByDateDesc(await getCollection('posts', ({ data }) => !data.draft));
 ---
 
-<BaseLayout title="Blogs" description="Notes and essays.">
-  <section class="page-header">
-    <p class="identity">archive</p>
-    <h1>Blogs</h1>
-    <p>Notes on AI systems, engineering tradeoffs, and research ideas.</p>
-  </section>
-  {posts.length > 0 ? <PostList posts={posts} /> : <p class="empty-state">No public posts yet.</p>}
+<BaseLayout title="Posts" description="Notes and essays.">
+  <div class="page">
+    <header class="page-head">
+      <p class="identity">{siteMeta.identity}</p>
+      <h1>Posts</h1>
+      <p class="lead">Notes on AI systems, engineering tradeoffs, and research ideas.</p>
+    </header>
+    {posts.length > 0 ? <PostList posts={posts} /> : <p class="empty-state">No public posts yet.</p>}
+  </div>
 </BaseLayout>

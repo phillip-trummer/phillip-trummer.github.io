@@ -1,13 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { withBase } from '../lib/site';
+import { siteMeta, withBase } from '../lib/site';
 ---
 
 <BaseLayout title="Not found" description="The requested page could not be found.">
-  <section class="page-header">
-    <p class="identity">404</p>
-    <h1>Not found</h1>
-    <p>This page is not here. The archive is probably the best place to continue.</p>
-    <p><a href={withBase('/blog/')}>Go to blog</a></p>
-  </section>
+  <div class="page">
+    <header class="page-head">
+      <p class="identity">{siteMeta.identity}</p>
+      <h1>Not found</h1>
+      <p class="lead">This page is not here. The archive is probably the best place to continue.</p>
+      <p><a href={withBase('/blog/')}>Go to blog</a></p>
+    </header>
+  </div>
 </BaseLayout>

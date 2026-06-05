@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { withBase } from '../lib/site';
+import { siteMeta, withBase } from '../lib/site';
 
 const photos = [
   {
@@ -25,11 +25,12 @@ const photos = [
 ---
 
 <BaseLayout title="Photos" description="A small visual log.">
-  <section class="page-header">
-    <p class="identity">visual log</p>
+  <div class="page">
+  <header class="page-head">
+    <p class="identity">{siteMeta.identity}</p>
     <h1>Photos</h1>
-    <p>A quiet place for images from walks, travel, work, and the in-between bits.</p>
-  </section>
+    <p class="lead">A quiet place for images from walks, travel, work, and the in-between bits.</p>
+  </header>
 
   <div class="photo-grid">
     {photos.map((photo) => (
@@ -41,5 +42,6 @@ const photos = [
         </figcaption>
       </figure>
     ))}
+  </div>
   </div>
 </BaseLayout>

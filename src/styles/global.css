@@ -49,14 +49,13 @@ img {
 }
 
 a {
-  color: var(--link);
-  text-decoration-color: color-mix(in srgb, var(--link), transparent 65%);
+  color: var(--text);
+  text-decoration-color: color-mix(in srgb, var(--text), transparent 65%);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
 }
 
 a:hover {
-  color: var(--accent);
   text-decoration-color: currentColor;
 }
 
@@ -164,10 +163,9 @@ a:hover {
   padding-block: 5rem 4rem;
 }
 
-.intro {
-  border-bottom: 1px solid var(--rule);
-  margin-bottom: 5rem;
-  padding-bottom: 4.5rem;
+/* Universal page header: identity + h1 + optional .lead. Used on every page. */
+.page-head {
+  margin-bottom: 3rem;
 }
 
 .identity {
@@ -204,19 +202,21 @@ li {
   line-height: 1.85;
 }
 
-.intro p:last-child,
-.page-header p,
-.post-header p,
+/* Muted body text: the lead line plus prose paragraphs/lists. Color only —
+   each element keeps its own font-size, so .identity stays small.
+   .post li covers freeform markdown lists inside a blog post. */
+.lead,
 .page > p,
-.post > p,
 .post li {
   color: var(--muted);
-  font-size: 1rem;
+}
+
+.lead {
+  margin: 0;
 }
 
 .section-heading {
   align-items: end;
-  border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
   display: flex;
   gap: 1rem;
@@ -257,6 +257,19 @@ li {
 .section-heading p {
   color: var(--muted);
   margin: 0;
+}
+
+.muted-link {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.muted-link:hover {
+  color: var(--text);
+}
+
+.post-list a:hover time {
+  color: var(--text);
 }
 
 .post-list {
@@ -305,30 +318,13 @@ li {
   padding-left: 1.1rem;
 }
 
-.page-header,
-.page,
-.post {
-  margin-inline: auto;
-  max-width: 690px;
-}
-
-.page-header {
-  border-bottom: 1px solid var(--rule);
-  margin-bottom: 3rem;
-  padding-bottom: 2.5rem;
-}
-
-.page h2,
-.post h2 {
+/* .page is the universal content wrapper; width comes from .site-main so
+   every page (and the nav/footer) share one column. .post adds prose-list
+   muting on top of .page for freeform markdown bodies. */
+.page h2 {
   border-top: 1px solid var(--rule);
   margin-top: 3.2rem;
   padding-top: 1.35rem;
-}
-
-.post-header {
-  border-bottom: 1px solid var(--rule);
-  margin-bottom: 3rem;
-  padding-bottom: 2.5rem;
 }
 
 .tags {
