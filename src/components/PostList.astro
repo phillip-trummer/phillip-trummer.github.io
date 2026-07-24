@@ -23,7 +23,7 @@ const visiblePosts = typeof limit === 'number' ? posts.slice(0, limit) : posts;
 <ol class="post-list">
   {visiblePosts.map((post) => (
     <li>
-      <a href={withBase(`/blog/${post.id}/`)}>
+      <a href={withBase(`/blogs/${post.id}/`)}>
         <span>{post.data.title}</span>
         <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
       </a>
