@@ -5,6 +5,24 @@ import PostList from '../components/PostList.astro';
 import { siteMeta, sortByDateDesc, withBase } from '../lib/site';
 
 const posts = sortByDateDesc(await getCollection('posts', ({ data }) => !data.draft));
+
+const focusAreas = [
+  {
+    title: 'Agents and harnesses',
+    detail:
+      'Long-running LLM agents and the harnesses around them, including tool orchestration, memory, evaluation, session handling, and feedback loops.',
+  },
+  {
+    title: 'Systems',
+    detail:
+      'Cloud architecture, model serving, databases, accelerated computing, and the infrastructure that connects them.',
+  },
+  {
+    title: 'Product engineering',
+    detail:
+      'Full-stack AI products, real-time interaction, automated feedback, product strategy, and production delivery.',
+  },
+];
 ---
 
 <BaseLayout title={siteMeta.title} description={siteMeta.description}>
@@ -13,11 +31,26 @@ const posts = sortByDateDesc(await getCollection('posts', ({ data }) => !data.dr
     <p class="identity">{siteMeta.identity}</p>
     <h1>Building AI systems that move from research into useful products.</h1>
     <p class="lead">
-      I work at the intersection of LLM agents, full-stack product engineering, and accelerated
-      computing. I am currently an ETH Zurich MSc student developing self-improving agents for
-      CUDA kernel optimization and building applied AI products.
+      I work at the intersection of agent infrastructure, full-stack product engineering, and
+      accelerated computing. I am currently an ETH Zurich MSc student developing long-running
+      agents for GPU kernel optimization and building applied AI products.
     </p>
   </header>
+
+  <section class="focus" aria-labelledby="focus-heading">
+    <div class="section-heading">
+      <p id="focus-heading">Focus</p>
+      <a class="muted-link" href={withBase('/about/')}>about →</a>
+    </div>
+    <ol class="focus-list home-focus-list">
+      {focusAreas.map((item) => (
+        <li>
+          <strong>{item.title}</strong>
+          <p>{item.detail}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
 
   {posts.length > 0 && (
     <>

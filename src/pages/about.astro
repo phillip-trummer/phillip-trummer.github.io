@@ -1,24 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteMeta } from '../lib/site';
-
-const focusAreas = [
-  {
-    title: 'Research',
-    detail:
-      'Self-improving LLM agents for CUDA kernel development, with an eye on profiling, feedback loops, and GPU performance.',
-  },
-  {
-    title: 'Product engineering',
-    detail:
-      'LLM-based product systems, real-time interaction, automated feedback, and the production details around them.',
-  },
-  {
-    title: 'Systems',
-    detail:
-      'Databases, cloud architecture, accelerated computing, and interfaces that make technical work easier to reason about.',
-  },
-];
 ---
 
 <BaseLayout title="About" description={`About ${siteMeta.name}.`}>
@@ -27,53 +9,49 @@ const focusAreas = [
       <p class="identity">{siteMeta.identity}</p>
       <h1>About</h1>
       <p class="lead">
-        I am an AI systems engineer and ETH Zurich MSc student based in Zurich. My work sits between
-        research and product: LLM agents, production AI systems, accelerated computing, and practical
-        tools for reasoning about complex workflows.
+        I am Phillip Trummer, an AI systems researcher and product engineer based in Zurich. I work
+        where long-running agent infrastructure, GPU performance engineering, and production
+        software meet.
       </p>
     </header>
 
-    <h2>Focus</h2>
-    <ol class="focus-list">
-      {focusAreas.map((area) => (
-        <li>
-          <strong>{area.title}</strong>
-          <p>{area.detail}</p>
-        </li>
-      ))}
-    </ol>
-
-    <h2>Work</h2>
+    <h2>Experience</h2>
     <p>
-      Professionally, I build LLM-based products end to end: full-stack web apps, Python services,
-      real-time voice agents, automated feedback, and cloud deployment. I care about systems that
-      are useful enough to leave the demo stage.
+      At Schranner Negotiation Institute, I lead product development for the
+      <a href="https://platform.schranner.com">AI-driven negotiation training platform</a>,
+      combining roadmap ownership and team leadership with hands-on system architecture. The
+      product spans a full-stack web application, Python services, real-time voice agents,
+      automated feedback, and cloud delivery.
+    </p>
+    <p>
+      Previously, as Vice-President and Project Leader at ETH juniors, I led consulting and
+      recruitment mandates for clients including Roche, Zürcher Kantonalbank, IKEA, and Axpo. The
+      work spanned AI systems, data products, market strategy, and organizational growth.
+    </p>
+    <p>
+      As a Student Partner at Founderful Campus, I scouted and supported student founders across
+      ETH Zurich, connecting promising teams with Founderful's venture network and initial funding.
     </p>
 
-    <h2>Research</h2>
+    <h2 id="research">Research</h2>
     <p>
-      At ETH, I am focused on self-improving LLM agents for CUDA kernel development. Recent work
-      also touches agent/database co-design, GPU-backed systems, and evaluation loops that turn
-      profiling or runtime feedback into better decisions.
+      My master's thesis, VibeKernel, uses GPU kernel optimization as an objective systems
+      environment for studying long-running agents. Kernels must be retuned as hardware
+      generations and workloads change, while expert optimization remains concentrated on
+      mainstream operations and flagship architectures.
+    </p>
+    <p>
+      I am investigating how harness design, including structured memory, experiment versioning,
+      and session-handling policies, can make that optimization process more autonomous,
+      persistent, and broadly applicable. Recent work also includes agent/database co-design and
+      GPU-backed systems.
     </p>
 
     <h2>Now</h2>
     <ul>
       <li>Working on an ETH MSc in Electrical Engineering and Information Technology.</li>
-      <li>Researching self-improving LLM agents for CUDA kernel development.</li>
-      <li>Building LLM-based product systems with real-time interaction and feedback loops.</li>
+      <li>Developing VibeKernel and its reproducible CUDA evaluation environment.</li>
+      <li>Leading an AI product from roadmap and architecture through production delivery.</li>
     </ul>
-
-    <h2>Writing</h2>
-    <p>
-      This site will collect occasional notes on AI systems, engineering tradeoffs, research ideas,
-      and the things I want to understand more clearly by writing them down.
-    </p>
-
-    <h2>Colophon</h2>
-    <p>
-      This site is built with Astro, Markdown, and a little CSS. It is static by default, deploys
-      cleanly to GitHub Pages, and should be easy to carry somewhere else later.
-    </p>
   </article>
 </BaseLayout>

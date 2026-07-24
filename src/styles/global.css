@@ -202,7 +202,7 @@ li {
   line-height: 1.85;
 }
 
-/* Muted body text: the lead line plus prose paragraphs/lists. Color only —
+/* Muted body text: the lead line plus prose paragraphs/lists. Color only;
    each element keeps its own font-size, so .identity stays small.
    .post li covers freeform markdown lists inside a blog post. */
 .lead,
@@ -234,6 +234,11 @@ li {
   list-style: none;
   margin: 1rem 0 0;
   padding: 0;
+}
+
+.home-focus-list {
+  border-top: 0;
+  margin-top: 0;
 }
 
 .focus-list li {
