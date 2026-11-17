@@ -1,8 +1,8 @@
 export const siteMeta = {
   name: 'Phillip Trummer',
-  tagline: 'AI systems & software / Zurich',
+  tagline: 'ML systems / Zurich',
   title: 'Phillip Trummer - personal site',
-  description: 'AI systems, research notes, and selected projects from Zurich.',
+  description: 'ML systems engineer focused on LLM inference and AI agent & harness engineering. Research notes and selected projects from Zurich.',
   email: 'pstrummer@outlook.com',
   github: 'https://github.com/phillip-trummer',
   linkedin: 'https://www.linkedin.com/in/phillip-trummer/',

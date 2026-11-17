@@ -8,14 +8,14 @@ const posts = sortByDateDesc(await getCollection('posts', ({ data }) => !data.dr
 
 const focusAreas = [
   {
-    title: 'Agents and harnesses',
+    title: 'LLM inference',
     detail:
-      'Long-running LLM agents and the harnesses that enable them, including tool orchestration, memory, session management, and evaluation.',
+      'GPU kernel optimization and serving performance, from CUDA and Triton kernels to attention backends and GPU databases, measured with benchmarks that reflect how the application actually runs.',
   },
   {
-    title: 'Systems',
+    title: 'AI agent & harness engineering',
     detail:
-      'Cloud architecture, model serving, accelerated computing, databases, and the broader infrastructure behind AI systems.',
+      'Long-running LLM agents and the harnesses that sustain them, including tool integration, memory across sessions, session handling, and evaluation.',
   },
   {
     title: 'Product engineering',
@@ -29,10 +29,12 @@ const focusAreas = [
   <div class="page">
   <header class="page-head">
     <p class="identity">{siteMeta.identity}</p>
-    <h1>AI Systems Research and Product Engineering.</h1>
+    <h1>ML Systems Engineering.</h1>
     <p class="lead">
-      I am an AI systems researcher and product engineer based in Zurich, working on long-running agents, 
-      GPU performance engineering, and production software.
+      I am an ML systems engineer based in Zurich, specializing in LLM inference and AI agent &amp;
+      harness engineering. I work across the stack, from GPU kernels and serving performance to
+      long-running agent systems, and bring three years of product engineering and technical
+      leadership.
     </p>
   </header>
 

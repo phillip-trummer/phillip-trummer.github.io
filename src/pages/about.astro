@@ -10,14 +10,60 @@ import { siteMeta } from '../lib/site';
       <h1>About Me</h1>
     </header>
 
+    <h2 id="research">Research</h2>
+    <p>
+      My master's thesis at the ETH Zurich Systems Group,
+      <a href="https://openreview.net/forum?id=WIihTnl976">LLM-Driven GPU Kernel Optimization</a>,
+      was accepted as a workshop paper at NeurIPS 2026 (ML for Systems). It studies how
+      general-purpose coding agents can optimize GPU kernels over long horizons when given the
+      right environment, instead of a hand-engineered search procedure.
+    </p>
+    <ul>
+      <li>
+        <strong>VibeKernel</strong>: long-running agents for GPU kernel optimization. On MLA decode
+        they outperformed specialized agentic systems at equal cost and produced a kernel that
+        ranked in the top 10 on NVIDIA's
+        <a href="https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/227/B200">SOL-ExecBench leaderboard</a>.
+      </li>
+      <li>
+        <strong>Experiment memory</strong>: a version-control-inspired memory system that keeps
+        agents productive across sessions, reducing best kernel latency by 23.4% over conversation
+        compaction alone.
+      </li>
+      <li>
+        <strong>Vibe-Bench</strong>: a benchmarking approach that evaluates kernels through the
+        application's interface rather than in isolation. Applied to SGLang serving (2.0% faster
+        than FlashInfer) and GPU database hash joins (up to 2.9× faster than NVIDIA cuCollections).
+      </li>
+    </ul>
+    <p>
+      Before that, my semester project explored LLM agent and database co-design: how database
+      redesign could improve agent interaction, latency, and query generation efficiency on
+      GPU-based database backends.
+    </p>
+
+    <h2>Open source</h2>
+    <ul>
+      <li>
+        <a href="https://github.com/sgl-project/sglang/pull/37975">SGLang #37975</a> (open): fixed
+        stale CUDA-graph metadata in the FlashInfer MLA attention backend, which could produce
+        incorrect attention outputs during decode.
+      </li>
+      <li>
+        <a href="https://github.com/flashinfer-ai/flashinfer/pull/4504">FlashInfer #4504</a> (open):
+        guarded Trace Apply kernel substitution so MLA decode kernels are no longer routed to
+        incompatible prefill calls.
+      </li>
+    </ul>
+
     <h2>Experience</h2>
     <p>
-      At Schranner Negotiation Institute, I lead the product development of its
+      At Schranner Negotiation Institute, I led the product development of its
       <a href="https://platform.schranner.com">
         Negotiation training platform
       </a>,
-      owning the roadmap and leading the engineering team while architecting and building the
-      product end to end. The platform combines a React and TypeScript frontend, a NestJS and
+      owning the roadmap and leading a four-person engineering team while architecting and building
+      the product end to end. The platform combines a React and TypeScript frontend, a NestJS and
       PostgreSQL backend, Python AI services, real-time WebRTC voice agents, automated
       LLM-based feedback, and containerized deployment on Azure.
     </p>
@@ -31,25 +77,9 @@ import { siteMeta } from '../lib/site';
       ETH Zurich, connecting promising teams with Founderful's venture network and initial funding.
     </p>
 
-    <h2 id="research">Research</h2>
-    <p>
-      My master's thesis, VibeKernel, uses GPU kernel optimization as an objective systems
-      environment for studying long-running agents. Kernels must be retuned as hardware
-      generations and workloads change, while expert optimization remains concentrated on
-      mainstream operations and flagship architectures.
-    </p>
-    <p>
-      I am investigating how harness design, including structured memory, experiment versioning,
-      and session-handling policies, can make that optimization process more autonomous,
-      persistent, and broadly applicable. Recent work also includes agent/database co-design and
-      GPU-backed systems.
-    </p>
-
     <h2>Now</h2>
     <ul>
-      <li>Working on an ETH MSc in Electrical Engineering and Information Technology.</li>
-      <li>Developing VibeKernel and its reproducible CUDA evaluation environment.</li>
-      <li>Leading an AI product from roadmap and architecture through production delivery.</li>
+      <li>Completed my ETH MSc in Electrical Engineering and Information Technology (October 2026).</li>
     </ul>
   </article>
 </BaseLayout>
